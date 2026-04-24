@@ -261,42 +261,42 @@ FF AND 0F             = F          ✔ Lập trình viên bitwise
 
 ### 1. Chế độ Cơ bản
 Biểu thức `(5+3)×2-4÷2` → `14`
-![Basic](screenshots/01_basic_mode.png)
+![Basic](screenshort/01_basic_mode.png)
 
 ### 2. Khoa học
 `sin(45)+cos(45)` → ≈1.41421
-![Scientific](screenshots/02_scientific_sin45.png)
+![Scientific](screenshort/02_scientific_sin45.png)
 
 ### 3. RAD mode
 `sin(π÷2)` → 1
-![RAD](screenshots/03_radian_mode.png)
+![RAD](screenshort/03_radian_mode.png)
 
 ### 4. Programmer AND
 `FF AND 0F` → `F`
-![AND](screenshots/04_programmer_and.png)
+![AND](screenshort/04_programmer_and.png)
 
 ### 5. Bit shift
 `1 << 4` → `10`
-![SHIFT](screenshots/05_programmer_shift.png)
+![SHIFT](screenshort/05_programmer_shift.png)
 
 ### 6. History
-![History](screenshots/06_history_screen.png)
+![History](screenshort/06_history_screen.png)
 
 ### 7. Settings
-![Settings](screenshots/07_settings_screen.png)
+![Settings](screenshort/07_settings_screen.png)
 
 ### 8. Dark theme
-![Dark](screenshots/08_dark_theme.png)
+![Dark](screenshort/08_dark_theme.png)
 
 ### 9. Light theme
-![Light](screenshots/09_light_theme.png)
+![Light](screenshort/09_light_theme.png)
 
 ### 10. Error handling
 `1÷0` → Error
-![Error](screenshots/10_error_handling.png)
+![Error](screenshort/10_error_handling.png)
 
 ### 11. Testing
-![Test](screenshots/11_testing.png)
+![Test](screenshort/11_testing.png)
 ---
 
 ## Cải tiến trong tương lai
