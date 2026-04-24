@@ -92,35 +92,49 @@
 ## Kiến trúc dự án
 
 ```
-lib/
-├── main.dart
-├── models/
-│   ├── calculation_history.dart     # Model dữ liệu + tuần tự hoá toMap/fromMap
-│   ├── calculator_mode.dart         # Enum: basic | scientific | programmer
-│   └── calculator_settings.dart    # Model cài đặt với copyWith & helper lưu trữ
-├── providers/
-│   ├── calculator_provider.dart     # Trạng thái chính (biểu thức, kết quả, chế độ, bộ nhớ)
-│   ├── history_provider.dart        # Trạng thái danh sách lịch sử
-│   └── theme_provider.dart          # Trạng thái giao diện + cài đặt
-├── screens/
-│   ├── calculator_screen.dart       # Màn hình chính (định tuyến chế độ, nhận cử chỉ)
-│   ├── history_screen.dart          # Danh sách lịch sử với xoá / dùng lại
-│   └── settings_screen.dart        # Giao diện, độ chính xác, chế độ góc, haptic
-├── widgets/
-│   ├── display_area.dart            # Màn hình có hiệu ứng (rung, mờ, vuốt)
-│   ├── calculator_button.dart       # Nút có hiệu ứng thu phóng
-│   ├── basic_keypad.dart            # Bàn phím cơ bản 4×5
-│   ├── scientific_keypad.dart       # Bàn phím khoa học 6×6
-│   ├── programmer_keypad.dart       # Bàn phím chế độ lập trình viên
-│   ├── mode_selector.dart           # Widget chuyển đổi chế độ
-│   ├── button_grid.dart             # Trợ giúp bố cục lưới chung
-│   └── right_navigation.dart        # Ngăn điều hướng bên phải
-├── utils/
-│   ├── calculator_logic.dart        # API tĩnh: evaluateExpression, evaluateProgrammer, sin/cos/…
-│   ├── expression_parser.dart       # Bộ phân tích: tiền xử lý → phân tích → tính toán
-│   └── constants.dart              # Hằng số toàn ứng dụng
-└── services/
-    └── storage_service.dart         # Wrapper SharedPreferences (lịch sử, cài đặt, chế độ, bộ nhớ)
+advancedcalculator_2224802010173_trancaotienhuy/
+├── android/                         # Cấu hình Android (Kotlin, Gradle, build files)
+├── ios/                             # Cấu hình iOS (Swift, Xcode project)
+├── linux/                           # Cấu hình Linux desktop
+├── macos/                           # Cấu hình macOS desktop
+├── windows/                         # Cấu hình Windows desktop
+├── web/                             # Cấu hình Web (index.html, icons, manifest)
+├── screenshort/                     # Ảnh chụp màn hình demo ứng dụng (11 ảnh)
+├── test/
+│   └── calculator_logic_test.dart   # ~218 test case trong 19 nhóm (A–S)
+├── lib/
+│   ├── main.dart                    # Điểm khởi động app, khởi tạo Provider & MaterialApp
+│   ├── models/
+│   │   ├── calculation_history.dart # Model lịch sử: biểu thức, kết quả, thời gian + toMap/fromMap
+│   │   ├── calculator_mode.dart     # Enum CalculatorMode: basic | scientific | programmer
+│   │   └── calculator_settings.dart # Model cài đặt: theme, decimal, angle, haptic + copyWith
+│   ├── providers/
+│   │   ├── calculator_provider.dart # Trạng thái chính: biểu thức, kết quả, chế độ, bộ nhớ M+/M-/MR/MC
+│   │   ├── history_provider.dart    # Quản lý danh sách lịch sử: thêm, xoá, tải từ storage
+│   │   └── theme_provider.dart      # Quản lý giao diện sáng/tối/hệ thống + tải/lưu cài đặt
+│   ├── screens/
+│   │   ├── calculator_screen.dart   # Màn hình chính: định tuyến chế độ, xử lý cử chỉ vuốt
+│   │   ├── history_screen.dart      # Màn hình lịch sử: danh sách, xoá từng mục, dùng lại phép tính
+│   │   └── settings_screen.dart     # Màn hình cài đặt: theme, decimal slider, DEG/RAD, haptic
+│   ├── widgets/
+│   │   ├── display_area.dart        # Màn hình hiển thị: hiệu ứng rung (error), mờ dần, xử lý vuốt
+│   │   ├── calculator_button.dart   # Nút bấm: hiệu ứng thu phóng 0.88× trong 200ms, haptic
+│   │   ├── basic_keypad.dart        # Bàn phím cơ bản 4×5: số, +−×÷, %, đổi dấu, AC
+│   │   ├── scientific_keypad.dart   # Bàn phím khoa học 6×6: sin/cos/tan, log/ln, ^, √, π, e, n!
+│   │   ├── programmer_keypad.dart   # Bàn phím lập trình viên: hex, AND/OR/XOR/NOT, <<, >>
+│   │   ├── mode_selector.dart       # Widget chuyển đổi chế độ: animation 300ms
+│   │   ├── button_grid.dart         # Widget bố cục lưới chung tái sử dụng cho các bàn phím
+│   │   └── right_navigation.dart    # Ngăn điều hướng bên phải: truy cập nhanh lịch sử & cài đặt
+│   ├── utils/
+│   │   ├── calculator_logic.dart    # API tĩnh: evaluateExpression, evaluateProgrammer, sin/cos/…
+│   │   ├── expression_parser.dart   # Parser: tiền xử lý → nhân ngầm định → đóng ngoặc → tính toán
+│   │   └── constants.dart           # Hằng số toàn app: màu sắc, font, spacing, giới hạn lịch sử
+│   └── services/
+│       └── storage_service.dart     # Wrapper SharedPreferences: lưu/tải lịch sử, cài đặt, chế độ, bộ nhớ
+├── pubspec.yaml                     # Khai báo dependencies và cấu hình project
+├── pubspec.lock                     # Lock file các phiên bản package
+├── analysis_options.yaml            # Cấu hình lint rules
+└── README.md                        # Tài liệu dự án
 ```
 
 **Quản lý trạng thái:** Provider pattern (`ChangeNotifier`)  
