@@ -257,21 +257,46 @@ FF AND 0F             = F          ✔ Lập trình viên bitwise
 ## Hướng dẫn chụp màn hình
 
 Đặt ảnh chụp màn hình vào thư mục `screenshots/` theo tên file dưới đây:
+## 📸 Screenshots
 
-| File                                  | Nội dung cần chụp                                                |
-|---------------------------------------|------------------------------------------------------------------|
-| `screenshots/01_basic_mode.png`       | Chế độ Cơ bản — biểu thức `(5+3)×2-4÷2` với kết quả `14`         |
-| `screenshots/02_scientific_sin45.png` | Chế độ Khoa học — `sin(45)+cos(45)` → `≈1.41421`                 |
-| `screenshots/03_radian_mode.png`      | Chế độ Khoa học RAD — `sin(π÷2)` → `1`                           |
-| `screenshots/04_programmer_and.png`   | Chế độ Lập trình viên — `FF AND 0F` → `F`                        |
-| `screenshots/05_programmer_shift.png` | Chế độ Lập trình viên — `1 << 4` → `10`                          |
-| `screenshots/06_history_screen.png`   | Màn hình lịch sử với nhiều phép tính                             |
-| `screenshots/07_settings_screen.png`  | Màn hình cài đặt (giao diện, thanh độ chính xác, chuyển đổi góc) |
-| `screenshots/08_dark_theme.png`       | Giao diện tối đang hoạt động                                     |
-| `screenshots/09_light_theme.png`      | Giao diện sáng đang hoạt động                                    |
-| `screenshots/10_error_handling.png`   | `1÷0` → `Error` hoặc `sqrt(-1)` → `Error`                        |
-| `screenshots/11_testing.png`          | ảnh chạy test case trong file test 'calculator_logic_test.dart'                              |
+### 1. Chế độ Cơ bản
+Biểu thức `(5+3)×2-4÷2` → `14`
+![Basic](screenshots/01_basic_mode.png)
 
+### 2. Khoa học
+`sin(45)+cos(45)` → ≈1.41421
+![Scientific](screenshots/02_scientific_sin45.png)
+
+### 3. RAD mode
+`sin(π÷2)` → 1
+![RAD](screenshots/03_radian_mode.png)
+
+### 4. Programmer AND
+`FF AND 0F` → `F`
+![AND](screenshots/04_programmer_and.png)
+
+### 5. Bit shift
+`1 << 4` → `10`
+![SHIFT](screenshots/05_programmer_shift.png)
+
+### 6. History
+![History](screenshots/06_history_screen.png)
+
+### 7. Settings
+![Settings](screenshots/07_settings_screen.png)
+
+### 8. Dark theme
+![Dark](screenshots/08_dark_theme.png)
+
+### 9. Light theme
+![Light](screenshots/09_light_theme.png)
+
+### 10. Error handling
+`1÷0` → Error
+![Error](screenshots/10_error_handling.png)
+
+### 11. Testing
+![Test](screenshots/11_testing.png)
 ---
 
 ## Cải tiến trong tương lai
