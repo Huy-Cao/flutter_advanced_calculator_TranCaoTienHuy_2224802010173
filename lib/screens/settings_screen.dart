@@ -206,7 +206,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                   style:TextStyle(color:titleColor,fontSize:16)),
               Text('${_local.decimalPrecision}digits',
                   style:const TextStyle(
-                      color:AppColors.lightAccent,fontWeight: FontWeight.bold)),
+                      color:AppColors.lightAccent,fontWeight:FontWeight.bold)),
             ],
           ),
           Slider(
@@ -240,10 +240,10 @@ class _SettingsScreenState extends State<SettingsScreen>
           return RadioListTile<int>(
             activeColor:AppColors.lightAccent,
             title:Text('$size calculations',
-                style: TextStyle(color: titleColor)),
+                style:TextStyle(color:titleColor)),
             value:size,
             groupValue: _local.historySize,
-            onChanged:  (v) => _update(_local.copyWith(historySize: v)),
+            onChanged: (v) =>_update(_local.copyWith(historySize:v)),
           );
         }).toList(),
       ),

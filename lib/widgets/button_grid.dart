@@ -14,11 +14,11 @@ class ButtonGrid extends StatelessWidget
     final mode=context.select((CalculatorProvider p)=>p.mode);
     return AnimatedSwitcher(
       duration:const Duration(milliseconds:300),
-      transitionBuilder:(Widget child, Animation<double> animation)
+      transitionBuilder:(Widget child,Animation<double>animation)
       {
         return FadeTransition(opacity:animation,child:child);
       },
-      child: _getKeypadWidget(mode),
+      child:_getKeypadWidget(mode),
     );
   }
   Widget _getKeypadWidget(CalculatorMode mode)
@@ -26,11 +26,11 @@ class ButtonGrid extends StatelessWidget
     switch(mode)
     {
       case CalculatorMode.basic:
-        return const BasicKeypad(key: ValueKey('basic'));
+        return const BasicKeypad(key:ValueKey('basic'));
       case CalculatorMode.scientific:
-        return const ScientificKeypad(key: ValueKey('scientific'));
+        return const ScientificKeypad(key:ValueKey('scientific'));
       case CalculatorMode.programmer:
-        return const ProgrammerKeypad(key: ValueKey('programmer'));
+        return const ProgrammerKeypad(key:ValueKey('programmer'));
     }
   }
 }

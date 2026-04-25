@@ -12,9 +12,8 @@ class RightNavigation extends StatelessWidget
   Widget build(BuildContext context)
   {
     final isDark=Theme.of(context).brightness==Brightness.dark;
-    final bgColor=isDark ? AppColors.darkSecondary : AppColors.lightSecondary;
-    final iconColor=isDark ? Colors.white70 : Colors.black54;
-
+    final bgColor=isDark ? AppColors.darkSecondary:AppColors.lightSecondary;
+    final iconColor=isDark ? Colors.white70:Colors.black54;
     return Container(
       decoration:BoxDecoration(
         color:bgColor,
@@ -75,10 +74,10 @@ class RightNavigation extends StatelessWidget
   }
   Widget _divider(bool isDark)=>Container(
     height:20,
-    width: 1,
-    color: isDark
-        ? Colors.grey.withOpacity(0.3)
-        : Colors.black.withOpacity(0.12),
+    width:1,
+    color:isDark
+        ?Colors.grey.withOpacity(0.3)
+        :Colors.black.withOpacity(0.12),
   );
   Widget _iconButton(
       BuildContext context,

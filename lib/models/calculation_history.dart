@@ -22,7 +22,7 @@ class CalculationHistory
     return CalculationHistory(
       expression:map['expression'] ?? '',
       result:map['result'] ?? '',
-      timestamp:DateTime.parse(map['timestamp']),
+      timestamp:DateTime.tryParse(map['timestamp']??'')??DateTime.now(),
     );
   }
 }
